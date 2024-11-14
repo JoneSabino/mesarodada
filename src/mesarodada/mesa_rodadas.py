@@ -14,7 +14,6 @@ class MesaRodadas:
         self.rodadas = []
         self.encontros = {p: set() for p in self.participantes}
 
-        # Configuração do logger
         logging.basicConfig(
             filename="alocacao_participantes.log",
             filemode="w",
@@ -23,7 +22,6 @@ class MesaRodadas:
         )
         self.logger = logging.getLogger()
 
-        # Verificar se a divisão é possível
         if self.num_participantes % self.lugares_por_mesa != 0:
             raise ValueError(
                 "O número de participantes deve ser divisível pelo número de lugares por mesa."
